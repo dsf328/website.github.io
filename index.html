@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>เว็บไซต์กวนๆ</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background: linear-gradient(135deg, #4CAF50, #81C784);
+            flex-direction: column;
+            text-align: center;
+            color: #fff;
+        }
+        .box {
+            width: 150px;
+            height: 150px;
+            background-image: url('https://via.placeholder.com/150'); /* Replace with your box image URL */
+            background-size: cover;
+            background-position: center;
+            border: none;
+            cursor: pointer;
+            border-radius: 20px;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+        }
+        .box::after {
+            content: "คลิก";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 20px;
+            font-weight: bold;
+            color: #000;
+            text-shadow: none;
+        }
+        .box:hover {
+            transform: translateY(-10px) scale(1.1);
+            box-shadow: 0 12px 20px rgba(0, 0, 0, 0.3);
+        }
+        .hidden {
+            display: none;
+        }
+        .carousel {
+            display: none;
+            width: 80%;
+            position: relative;
+        }
+        .carousel img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 15px;
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+        }
+        .carousel button {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(0, 0, 0, 0.5);
+            color: #fff;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            border-radius: 50%;
+        }
+        .carousel .prev {
+            left: 10px;
+        }
+        .carousel .next {
+            right: 10px;
+        }
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 30px;
+            text-shadow: 2px 3px rgba(0, 0, 0, 0.3);
+        }
+    </style>
+</head>
+<body>
+
+    <h1>SIAM FORGING</h1>
+    <button class="box" onclick="startCarousel()"></button>
+
+    <div class="carousel" id="carousel">
+        <button class="prev" onclick="changeSlide(-1)">&#10094;</button>
+        <img id="slide" src="1fah7qytua0v.webp" alt="Image 1">
+        <button class="next" onclick="changeSlide(1)">&#10095;</button>
+    </div>
+
+    <script>
+        const images = [
+            '1fah7qytua0v.webp',
+            'flcapm44pruv.webp',
+            'wb4fimenxwy4.webp'
+        ];
+        let currentIndex = 0;
+
+        function startCarousel() {
+            document.querySelector('.box').classList.add('hidden');
+            const carousel = document.getElementById('carousel');
+            carousel.style.display = 'block';
+            document.getElementById('slide').src = images[currentIndex];
+        }
+
+        function changeSlide(direction) {
+            currentIndex = (currentIndex + direction + images.length) % images.length;
+            document.getElementById('slide').src = images[currentIndex];
+        }
+    </script>
+
+</body>
+</html>

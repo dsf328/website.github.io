@@ -1,0 +1,57 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #ffe6e6;
+    text-align: center;
+    padding: 50px;
+    margin: 0;
+}
+
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    color: #ff4d4d;
+}
+
+p {
+    font-size: 20px;
+    color: #333;
+}
+
+#annoyingButton {
+    padding: 10px 20px;
+    font-size: 16px;
+    color: #fff;
+    background-color: #ff4d4d;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    position: absolute;
+    transition: all 0.5s ease;
+}
+
+#annoyingButton:hover {
+    background-color: #e60000;
+}
+
+.hidden {
+    display: none;
+}
+
+#surpriseMessage {
+    font-size: 30px;
+    color: #ff4d4d;
+    margin-top: 20px;
+}
+
+#surpriseImage {
+    width: 200px;
+    margin-top: 20px;
+    border-radius: 10px;
+}
